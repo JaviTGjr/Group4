@@ -45,11 +45,15 @@ public class Node : MonoBehaviour
         {
             Debug.Log("Can't build there!");
             return;
+            
         }
+       
 
         buildManager.BuildTurretOn(this);
+        Waypoints.current.AddWaypoint(turret.transform);
 
-        
+
+
     }
 
     void OnMouseEnter()

@@ -7,9 +7,9 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 10f;
 
-    private float countdown = 2f;
+    private float countdown = 10f;
 
     public Text waveCountdownText;
 
