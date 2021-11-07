@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
 
     private Transform target;
-
+    public int damage = 50;
     public float speed = 70f;
 
     public GameObject  impactEffect;
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
+            HitTarget(target);
             return;
         }
 
@@ -36,12 +36,18 @@ public class Bullet : MonoBehaviour
 
     }
 
-    void HitTarget()
+    void HitTarget(Transform enemy)
     {
+        Enemy e = enemy.GetComponent<Enemy>();
+        if(e != null)
+        {
+            e.TakeDamage(damage);
+        }
+        
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
         Destroy(gameObject);
-        Destroy(target.gameObject);
+       
     }
     
 }
