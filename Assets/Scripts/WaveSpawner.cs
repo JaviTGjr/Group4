@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public Transform[] enemyPrefabs;
 
     public Transform spawnPoint;
 
@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
     
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefabs[Random.Range(0, waveNumber)], spawnPoint.position, spawnPoint.rotation);
     }
 
 
