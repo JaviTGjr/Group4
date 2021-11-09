@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 public class Node : MonoBehaviour
 {
 
@@ -21,37 +20,15 @@ public class Node : MonoBehaviour
 
     BuildManager buildManager;
 
-    public int numberToSpawn;
-
-    public GameObject obstacle;
-
-    private static int obstacleCount; 
-
-    
-
     void Start()
     {
-        
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
-        SpawnObstacle();
-
     }
 
-    void SpawnObstacle()
-    {
-        numberToSpawn = Random.Range(numberToSpawn, numberToSpawn);
-        if (obstacleCount < numberToSpawn)
-        {
-            obstacleCount++;
-            Vector3 position = transform.position + positionOffset;
-            Instantiate(obstacle, position, Quaternion.identity);
-        }
-    }
 
-    
     public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffset;
