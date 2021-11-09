@@ -23,7 +23,6 @@ public class Waypoints : MonoBehaviour
     public void AddWaypoint(Transform objectchild)
     {
         points.Add(objectchild);
-        Debug.Log(points.Count);
     }
     public Transform getList(int number)
     {

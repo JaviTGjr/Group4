@@ -14,6 +14,8 @@ public class Node : MonoBehaviour
 
     public Color notEnoughMoneyColor;
 
+    public Color waypointColor;
+
     public Vector3 positionOffset;
 
     public Color hoverColor;
@@ -23,6 +25,10 @@ public class Node : MonoBehaviour
     private Color startColor;
 
     BuildManager buildManager;
+
+    private bool hasWaypoint = false;
+
+    private static int currentWaypointAmount;
 
     void Start()
     {
@@ -54,12 +60,6 @@ public class Node : MonoBehaviour
 
      void OnMouseDown()
     {
-
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
-
-
         if(turret != null)
         {
             buildManager.SelectNode(this);
@@ -70,15 +70,27 @@ public class Node : MonoBehaviour
         if (!buildManager.CanBuild)
             return;
 
-        BuildTurret(buildManager.GetTurretToBuild());
-        Waypoints.current.AddWaypoint(turret.transform);
-
-
-
+        if (currentWaypointAmount < buildManager.maxWaypoints)
+        {
+            BuildTurret(buildManager.GetTurretToBuild());
+            if (buildManager.GetTurretToBuild().Prefab.name == "Waypoint")
+            {
+                Waypoints.current.AddWaypoint(turret.transform);
+                Debug.Log("Waypoint added " + currentWaypointAmount);
+                rend.material.color = waypointColor;
+                hasWaypoint = true;
+                currentWaypointAmount++;
+            }
+        }
+        else if (currentWaypointAmount >= buildManager.maxWaypoints)
+        {
+            Debug.Log("too many waypoints");
+        }
     }
 
     void BuildTurret(TurretBlueprint blueprint)
     {
+        turretBlueprint = blueprint;
         if (PlayerStats.Money < blueprint.cost)
         {
             Debug.Log("Not enough money to build that");
@@ -90,8 +102,6 @@ public class Node : MonoBehaviour
 
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
-
-        turretBlueprint = blueprint;
 
         Debug.Log("Turret build! Money left" + PlayerStats.Money);
     }
@@ -124,6 +134,13 @@ public class Node : MonoBehaviour
         Destroy(turret);
         turretBlueprint = null;
         isUpgraded = false;
+        hasWaypoint = false;
+        rend.material.color = startColor;
+        if (turretBlueprint.Prefab.name == "Waypoint")
+        {
+            Debug.Log("less waypoints");
+            currentWaypointAmount--;
+        }
     }
 
 
@@ -150,7 +167,14 @@ public class Node : MonoBehaviour
 
      void OnMouseExit()
     {
-        rend.material.color = startColor;
+        if(hasWaypoint)
+        {
+            rend.material.color = waypointColor;
+        }
+        else
+        {
+            rend.material.color = startColor;
+        }
     }
 
 }

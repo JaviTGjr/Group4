@@ -243,7 +243,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 0d4bea422eaa8c7478eac03353f283b5, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 123
     m_Alignment: 0
@@ -2315,7 +2315,7 @@ GameObject:
   - component: {fileID: 401406033}
   - component: {fileID: 401406034}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: GameMaster/BuildManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,9 +2367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6e757a64e10f54c9bdc50b53495e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 5135113763435054851, guid: 2872407e1ccc89347859b14780afea0b, type: 3}
-  missileTurretPrefab: {fileID: 2270525963212896164, guid: 6ba24f247a9a07444877ef81a780a175, type: 3}
-  WaypointPrefab: {fileID: 532269431341745067, guid: e25b710884c9bd441867ea7cf7c34d8b, type: 3}
   nodeUI: {fileID: 1403248254}
 --- !u!114 &401406033
 MonoBehaviour:
@@ -8593,9 +8590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -118,5 +118,6 @@ MonoBehaviour:
   obstacle: {fileID: 3221363787296755939, guid: a04a93372add2f144be208d6caff28cc, type: 3}
   numberToSpawn: 3
   notEnoughMoneyColor: {r: 0.8962264, g: 0.080322154, b: 0.080322154, a: 0}
+  waypointColor: {r: 0.94347, g: 0.4292453, b: 1, a: 0}
   positionOffset: {x: 0, y: 1, z: 0}
   hoverColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0}

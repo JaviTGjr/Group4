@@ -8,14 +8,11 @@ public class BuildManager : MonoBehaviour
 
     public static BuildManager instance;
 
-    public GameObject standardTurretPrefab;
-
-    public GameObject missileTurretPrefab;
-
-    public GameObject WaypointPrefab;
-
-
     public NodeUI nodeUI;
+
+    public int maxWaypoints = 2;
+
+    public int MaxWaypoints { get { return maxWaypoints; } }
 
 
     void Awake()

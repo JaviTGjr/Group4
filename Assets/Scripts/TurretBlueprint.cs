@@ -7,6 +7,7 @@ using UnityEngine;
 public class TurretBlueprint {
 
     public GameObject prefab;
+    public GameObject Prefab { get { return prefab; } }
     public int cost;
 
     public GameObject upgradedPrefab;
@@ -16,7 +17,6 @@ public class TurretBlueprint {
     public int GetSellAmount()
     {
         return cost / 2;
-        
     }
 
 
