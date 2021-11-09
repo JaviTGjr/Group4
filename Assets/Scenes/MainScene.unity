@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43680465, g: 0.48443598, b: 0.564692, a: 1}
+  m_IndirectSpecularColor: {r: 0.43680492, g: 0.48443562, b: 0.5646905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2339,7 +2339,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 173686636}
   timeBetweenWaves: 20
   waveCountdownText: {fileID: 843767502}
-  currentWave: {fileID: 0}
 --- !u!4 &401406031
 Transform:
   m_ObjectHideFlags: 0
@@ -8381,7 +8380,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 0d4bea422eaa8c7478eac03353f283b5, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 123
     m_Alignment: 7
@@ -8390,7 +8389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 LIVES
+  m_Text: 20 LIVES
 --- !u!222 &1799758394
 CanvasRenderer:
   m_ObjectHideFlags: 0
