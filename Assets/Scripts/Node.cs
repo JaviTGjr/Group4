@@ -8,6 +8,10 @@ public class Node : MonoBehaviour
     public bool isUpgraded = false;
 
 
+    public GameObject obstacle;
+    private static int obstacleCount;
+    public int numberToSpawn;
+
     public Color notEnoughMoneyColor;
 
     public Vector3 positionOffset;
@@ -26,6 +30,19 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
+        SpawnObstacle();
+
+    }
+
+    void SpawnObstacle()
+    {
+        numberToSpawn = Random.Range(numberToSpawn, numberToSpawn);
+        if (obstacleCount < numberToSpawn)
+        {
+            obstacleCount++;
+            Vector3 position = transform.position + positionOffset;
+            Instantiate(obstacle, position, Quaternion.identity);
+        }
     }
 
 
