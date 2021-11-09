@@ -15,10 +15,13 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveNumber = 0;
 
+    public Text currentWave;
+
      void Update()
     {
         if(countdown <= 0f)
         {
+            
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
@@ -33,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        currentWave.text = PlayerStats.Rounds.ToString();
         PlayerStats.Rounds++;
         for (int i = 0; i < waveNumber; i++)
         {

@@ -9,6 +9,7 @@ public class NodeUI : MonoBehaviour
     public GameObject ui;
 
     public Text upgradeCost;
+    
     public Button upgradeButton;
     private Node target;
 
