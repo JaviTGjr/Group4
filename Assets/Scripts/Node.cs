@@ -39,7 +39,7 @@ public class Node : MonoBehaviour
 
     void SpawnObstacle()
     {
-        numberToSpawn = Random.Range(0, 10);
+        numberToSpawn = Random.Range(numberToSpawn, numberToSpawn);
         if (obstacleCount < numberToSpawn)
         {
             obstacleCount++;
