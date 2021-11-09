@@ -28,13 +28,13 @@ public class Enemy : MonoBehaviour
     void GetNextWaypoint()
     {
         
-        if (waypointindex > Waypoints.current.transform.childCount - 1)
+        if (waypointindex > Waypoints.current.transform.childCount)
         {
 
             Destroy(gameObject);
             return;
         }
-        else if(waypointindex == Waypoints.current.transform.childCount - 1)
+        else if(waypointindex == Waypoints.current.transform.childCount)
         {
             target = new Vector3(Waypoints.current.LastWaypoint().x, this.transform.position.y, Waypoints.current.LastWaypoint().z);
             waypointindex++;
