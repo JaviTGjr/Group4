@@ -70,19 +70,21 @@ public class Node : MonoBehaviour
         if (!buildManager.CanBuild)
             return;
 
-        if (currentWaypointAmount < buildManager.maxWaypoints)
+        if (currentWaypointAmount < buildManager.maxWaypoints || !(buildManager.GetTurretToBuild().Prefab.name == "Waypoint"))
         {
             BuildTurret(buildManager.GetTurretToBuild());
             if (buildManager.GetTurretToBuild().Prefab.name == "Waypoint")
             {
+                this.GetComponent<ColorEffect>().enabled = false;
                 Waypoints.current.AddWaypoint(turret.transform);
                 Debug.Log("Waypoint added " + currentWaypointAmount);
                 rend.material.color = waypointColor;
                 hasWaypoint = true;
                 currentWaypointAmount++;
+
             }
         }
-        else if (currentWaypointAmount >= buildManager.maxWaypoints)
+        else if (buildManager.GetTurretToBuild().Prefab.name == "Waypoint" && currentWaypointAmount >= buildManager.maxWaypoints)
         {
             Debug.Log("too many waypoints");
         }
@@ -143,8 +145,7 @@ public class Node : MonoBehaviour
         }
     }
 
-
-    void OnMouseEnter()
+    private void OnMouseEnter()
     {
 
         if (EventSystem.current.IsPointerOverGameObject())
@@ -156,24 +157,19 @@ public class Node : MonoBehaviour
         if (buildManager.HasMoney)
         {
             rend.material.color = hoverColor;
+            this.GetComponent<ColorEffect>().Reset();
         }
         else
         {
             rend.material.color = notEnoughMoneyColor;
         }
-        
-
     }
 
-     void OnMouseExit()
+    void OnMouseExit()
     {
         if(hasWaypoint)
         {
             rend.material.color = waypointColor;
-        }
-        else
-        {
-            rend.material.color = startColor;
         }
     }
 

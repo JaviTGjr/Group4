@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1532548719807416955}
   - component: {fileID: 3028018210373915635}
   - component: {fileID: -3643231335366128639}
+  - component: {fileID: -9065212911895835059}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 75b45ea7289d7e943a1dbd2963262135, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,6 +119,20 @@ MonoBehaviour:
   obstacle: {fileID: 3221363787296755939, guid: a04a93372add2f144be208d6caff28cc, type: 3}
   numberToSpawn: 3
   notEnoughMoneyColor: {r: 0.8962264, g: 0.080322154, b: 0.080322154, a: 0}
-  waypointColor: {r: 0.94347, g: 0.4292453, b: 1, a: 0}
+  waypointColor: {r: 0.28960717, g: 1, b: 0, a: 0}
   positionOffset: {x: 0, y: 1, z: 0}
   hoverColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0}
+--- !u!114 &-9065212911895835059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221363787296755939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d5837823119c49b588481900b345d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothness: 1
+  times: 10

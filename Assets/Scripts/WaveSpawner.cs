@@ -38,11 +38,11 @@ public class WaveSpawner : MonoBehaviour
         waveNumber++;
         currentWave.text = PlayerStats.Rounds.ToString();
         PlayerStats.Rounds++;
-        for (int i = 0; i < waveNumber; i++)
+        for (int i = 0; i < waveNumber*5; i++)
         {
 
             SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
 
         }
     }
