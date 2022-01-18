@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
     public TurretBlueprint standardTurret;
     public TurretBlueprint missileTurret;
     public TurretBlueprint singleTurret;
+    public TurretBlueprint raygunTurret;
 
     BuildManager buildManager;
 
@@ -32,6 +33,14 @@ public class Shop : MonoBehaviour
         buildManager.SelectTurretToBuild(singleTurret);
 
     }
+
+    public void SelectRayGunTurret()
+    {
+        Debug.Log("Raygun Turret Selected");
+        buildManager.SelectTurretToBuild(raygunTurret);
+
+    }
+
     public void SelectWaypoint()
     {
         Debug.Log("Waypoint Selected");

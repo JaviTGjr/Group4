@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public float speed = 10f;
-    public int health = 100;
+    public float health = 100;
 
     public int moneyGained = 50;
 
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         GetNextWaypoint();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
 
