@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4464070410757856253}
   - component: {fileID: 4464070410757856254}
   - component: {fileID: 3452268939000918889}
+  - component: {fileID: 6321687984705153169}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -112,3 +113,16 @@ MonoBehaviour:
   health: 350
   moneyGained: 100
   deathEffect: {fileID: 8861254528709415065, guid: c2eadd7adb56b5749a91132c1c41f291, type: 3}
+--- !u!114 &6321687984705153169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464070410757856255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f979ac14e8e5c024e8368e97d30c1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 20

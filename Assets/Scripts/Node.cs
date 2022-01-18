@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 public class Node : MonoBehaviour
 {
 
@@ -106,6 +107,9 @@ public class Node : MonoBehaviour
         turret = _turret;
 
         Debug.Log("Turret build! Money left" + PlayerStats.Money);
+        StartCoroutine(Hide());
+
+
     }
 
     public void UpgradeTurret()
@@ -123,13 +127,21 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
-        
+        turret.transform.GetChild(1).gameObject.SetActive(false);
+
 
         isUpgraded = true;
 
         Debug.Log("Turret updraged! Money left" + PlayerStats.Money);
     }
+    IEnumerator Hide()
+    {
+    
+        yield return new WaitForSeconds(3);
+        turret.transform.GetChild(1).gameObject.SetActive(false);
+        Debug.Log("da");
 
+    }
     public void SellTurret()
     {
         PlayerStats.Money += turretBlueprint.GetSellAmount();

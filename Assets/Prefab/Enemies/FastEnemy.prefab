@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6694442379234814639}
   - component: {fileID: 2286597446845303421}
   - component: {fileID: 3780903291137518192}
+  - component: {fileID: 1644650077654441006}
   m_Layer: 0
   m_Name: FastEnemy
   m_TagString: Enemy
@@ -112,3 +113,16 @@ MonoBehaviour:
   health: 70
   moneyGained: 75
   deathEffect: {fileID: 8861254528709415065, guid: c2eadd7adb56b5749a91132c1c41f291, type: 3}
+--- !u!114 &1644650077654441006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920588320565067993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f979ac14e8e5c024e8368e97d30c1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 10
