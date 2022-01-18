@@ -133,16 +133,17 @@ public class Node : MonoBehaviour
     public void SellTurret()
     {
         PlayerStats.Money += turretBlueprint.GetSellAmount();
+        if (turretBlueprint.Prefab.name == "Waypoint")
+        {
+            Debug.Log("less waypoints");
+            currentWaypointAmount--;
+            rend.material.color = startColor;
+        }
         Destroy(turret);
         turretBlueprint = null;
         isUpgraded = false;
         hasWaypoint = false;
         rend.material.color = startColor;
-        if (turretBlueprint.Prefab.name == "Waypoint")
-        {
-            Debug.Log("less waypoints");
-            currentWaypointAmount--;
-        }
     }
 
     private void OnMouseEnter()

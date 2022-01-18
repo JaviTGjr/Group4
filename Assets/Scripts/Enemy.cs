@@ -46,6 +46,9 @@ public class Enemy : MonoBehaviour
     {
         Vector3 dir = target - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        float singleStep = speed * Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, dir, 1, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
         if (Vector3.Distance(transform.position, target) <= 0.04f)
         {
             GetNextWaypoint();

@@ -72,12 +72,20 @@ PrefabInstance:
       value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4302664564592253275, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302664564592253275, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
       propertyPath: InitialModule.startRotation.scalar
       value: 1.7453293
       objectReference: {fileID: 0}
     - target: {fileID: 4302664564592253275, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302664564592253275, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4302664564592253275, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
@@ -86,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 4367106152426739244, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ce8bf150d9bc5da49b802f26769a9d38, type: 2}
+      objectReference: {fileID: 2100000, guid: 218a4ba50b4c1934c8b81b9dc529a01f, type: 2}
     - target: {fileID: 8224418632057196434, guid: f353b2c5fbe3f3d488900da56882961f, type: 3}
       propertyPath: m_Name
       value: EnemyDeathEffect

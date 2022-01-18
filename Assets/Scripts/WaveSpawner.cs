@@ -49,6 +49,8 @@ public class WaveSpawner : MonoBehaviour
     
     void SpawnEnemy()
     {
+        float offset = 1;
+        Vector3 newSpawnPoint = new Vector3(spawnPoint.position.x + Random.Range(-offset, offset), spawnPoint.position.y + Random.Range(-offset, offset), spawnPoint.position.z + Random.Range(-offset, offset));
         Instantiate(enemyPrefabs[Random.Range(0, 3)], spawnPoint.position, spawnPoint.rotation);
     }
 
